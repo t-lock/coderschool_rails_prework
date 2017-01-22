@@ -1,0 +1,56 @@
+<p id="notice"><%= notice %></p>
+<div class="container">
+  <h1>ratemykitty.vn</h1>
+
+  <br>
+  <h3>Kitty Stats</h3>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="chart">
+
+        <% viewsHash = Hash[ @articles.map{ |kitty| [kitty.title,kitty.impressionist_count] } ] %>
+
+        <%= line_chart(viewsHash) %>
+
+      </div>
+    </div>
+  </div>
+
+  <br>
+  <h3>Meet the Kitties &hellip;</h3>
+
+  <div class="row">
+    <div class="col-sm-12">
+
+      <% @articles.each do |article| %>
+
+      <div class="card">
+        <div class="views text-white">
+          <i class="icon-eye" style="display:inline-block;width: 30px;"></i> <span class="view-count" style="display:inline-block;min-width: 30px;"><%= article.impressionist_count %></span>
+          <i class="icon-heart" style="display:inline-block;width: 30px;"></i> <span class="rating-count" style="display:inline-block;min-width: 30px;">66</span>
+        </div>
+        <div class="overlay"></div>
+        <img class="card-img-top img-fluid" src="<%= article.image.url(:large) %>" alt="Nature Rules">
+        <div class="card-block">
+          <h4 class="card-title"><%= article.title %><% article.object_id %></h4>
+          <%= @markdown.render(article.body).html_safe %>
+        </div>
+        <div class="footer-toggle">
+          <div class="card-footer">
+            <%= link_to 'View', article, class: 'btn btn-secondary' %></td>
+            <%= link_to 'Edit', edit_article_path(article), class: 'btn btn-secondary' %></td>
+            <%= link_to 'Kill', article, method: :delete, data: { confirm: 'Are you serious!?' }, class: 'btn btn-danger' %>
+          </div>
+        </div>
+      </div>
+
+      <% end %>
+
+    </div>
+  </div>
+
+  <br>
+  <%= link_to 'Add A Kitty', new_article_path, class: 'btn btn-primary' %>
+
+</div>
