@@ -1,4 +1,10 @@
-<p id="notice"><%= notice %></p>
+<% unless user_signed_in? %>
+  <script type="text/javascript">
+    $('#myModal').modal('show');
+  </script>
+<% end %>
+
+<!-- <p id="notice"><%= notice %></p> -->
 <div class="container">
   <h1>ratemykitty.vn</h1>
   <img src="<%= image_path('logo.png') %>" srcset="<%= image_path('logo@2x.png') %> 2x">
@@ -39,8 +45,8 @@
         </div>
         <div class="footer-toggle">
           <div class="card-footer">
-            <%= link_to 'View', article, class: 'btn btn-secondary' %></td>
-            <%= link_to 'Edit', edit_article_path(article), class: 'btn btn-secondary' %></td>
+            <%= link_to 'View', article, class: 'btn btn-secondary' %>
+            <%= link_to 'Edit', edit_article_path(article), class: 'btn btn-secondary' %>
             <%= link_to 'Kill', article, method: :delete, data: { confirm: 'Are you serious!?' }, class: 'btn btn-danger' %>
           </div>
         </div>
@@ -52,6 +58,8 @@
   </div>
 
   <br>
-  <%= link_to 'Add A Kitty', new_article_path, class: 'btn btn-primary' %>
+  <% if user_signed_in? %>
+    <%= link_to 'Add A Kitty', new_article_path, class: 'btn btn-primary' %>
+  <% end %>
 
 </div>

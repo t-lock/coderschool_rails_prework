@@ -19,5 +19,6 @@
   <%= @article.user.email %>
 </p>
 
-<%= link_to 'Edit', edit_article_path(@article) %>
-<%= link_to 'Back', articles_path %>
+<%= link_to 'Edit', edit_article_path(@article), class: 'btn btn-primary' %>
+<%= link_to 'Kill', article_path, method: :delete, data: { confirm: 'Are you serious!?' }, class: 'btn btn-danger' %>
+<%= link_to 'Back', articles_path, class: 'btn btn-secondary' %>

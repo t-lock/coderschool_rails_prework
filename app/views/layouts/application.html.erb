@@ -12,8 +12,50 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <!-- <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p> -->
+
+    <!-- Sign in/out -->
+    <div class="container">
+      <% if user_signed_in? %>
+        <p>
+          You are signed in as
+          <%= current_user.email %>. <%= link_to('Logout', destroy_user_session_path, :method => :delete, :class => 'btn btn-secondary') %>
+        </p>
+      <% else %>
+        <p>
+          You are not logged in.
+          <%= link_to('Login', new_user_session_path, :class => 'btn btn-secondary')  %>
+          or
+          <%= link_to 'Register', new_user_registration_path, class: 'btn btn-secondary' %>
+        </p>
+      <% end %>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h5 class="modal-title" id="exampleModalLabel">Sign in to rate, edit, or kill kitties!</h5>
+          </div>
+          <div class="modal-body">
+            <p>You can create your own user, or demo this site as a guest by logging in to</p>
+            <p>User: guest@ratemykitty.vn</p>
+            <p>Password: supersecret</p>
+          </div>
+          <div class="modal-footer">
+            <%= link_to 'Login', new_user_session_path, class: 'btn btn-success' %>
+
+            <%= link_to 'Register', new_user_registration_path, class: 'btn btn-primary' %>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <%= yield %>
   </body>
 </html>
