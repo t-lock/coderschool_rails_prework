@@ -82,7 +82,7 @@ class ArticlesController < ApplicationController
 
   def downvote
     @article = Article.find(params[:id])
-    @article.downvote_by :voter => current_user, duplicate => true
+    @article.vote_by :voter => current_user, :duplicate => true, :vote => 'bad'
     redirect_to articles_url
   end
 

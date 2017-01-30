@@ -15,7 +15,7 @@
       <div class="chart">
 
         <% viewsHash = Hash[ @articles.map{ |kitty| [kitty.title,kitty.impressionist_count] } ] %>
-        <% votesHash = Hash[ @articles.map{ |kitty| [kitty.title,kitty.find_votes_for.size] } ] %>
+        <% votesHash = Hash[ @articles.map{ |kitty| [kitty.title,(kitty.get_upvotes.size - kitty.get_downvotes.size)] } ] %>
 
         <%= line_chart [
           {name: "Views", data: viewsHash},
@@ -37,9 +37,26 @@
       <div class="card">
         <div class="views text-white">
           <i class="icon-eye" style="display:inline-block;width: 30px;"></i> <span class="view-count" style="display:inline-block;min-width: 30px;"><%= kitty.impressionist_count %></span>
-          <i class="icon-heart" style="display:inline-block;width: 30px;"></i> <span class="rating-count" style="display:inline-block;min-width: 30px;"><%= kitty.find_votes_for.size %></span>
+          <i class="icon-heart" style="display:inline-block;width: 30px;"></i> <span class="rating-count" style="display:inline-block;min-width: 30px;"><%= kitty.get_upvotes.size - kitty.get_downvotes.size%></span>
         </div>
-        <div class="overlay"></div>
+
+        <div class="overlay">
+          <div class="dislike text-white">
+            <%= link_to dislike_article_path(kitty), method: :put, class: 'btn' do %>
+              -1
+              <br>
+              <i class="icon-thumbs-down"></i>
+            <% end %>
+          </div>
+          <div class="like text-white">
+            <%= link_to like_article_path(kitty), method: :put, class: 'btn' do %>
+              +1
+              <br>
+              <i class="icon-thumbs-up"></i>
+            <% end %>
+          </div>
+        </div>
+
         <img class="card-img-top img-fluid" src="<%= kitty.image.url(:large) %>" alt="Nature Rules">
         <div class="card-block">
           <h4 class="card-title"><%= kitty.title %><% kitty.object_id %></h4>
@@ -47,13 +64,15 @@
         </div>
         <div class="footer-toggle">
           <div class="card-footer">
-            <%= link_to like_article_path(kitty), method: :put, class: 'btn btn-success' do %>
-              <i class="icon-heart"></i>
-              <%= kitty.get_upvotes.size %>
+            <%= link_to kitty, class: 'btn btn-primary' do %>
+              <i class="icon-eye"></i> View
             <% end %>
-            <%= link_to 'View', kitty, class: 'btn btn-secondary' %>
-            <%= link_to 'Edit', edit_article_path(kitty), class: 'btn btn-secondary' %>
-            <%= link_to 'Kill', kitty, method: :delete, data: { confirm: 'Are you serious!?' }, class: 'btn btn-danger' %>
+            <%= link_to edit_article_path(kitty), class: 'btn btn-warning' do %>
+              <i class="icon-pencil"></i> Edit
+            <% end %>
+            <%= link_to kitty, method: :delete, data: { confirm: 'Are you serious!?' }, class: 'btn btn-danger' do %>
+              <i class="icon-sword"></i> Kill
+            <% end %>
           </div>
         </div>
       </div>
