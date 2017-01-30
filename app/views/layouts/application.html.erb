@@ -12,27 +12,43 @@
   </head>
 
   <body>
-    <!-- <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p> -->
-
     <!-- Sign in/out -->
-    <div class="container">
+    <div class="container" style="text-align: right;">
       <% if user_signed_in? %>
-        <p>
-          You are signed in as
-          <%= current_user.email %>. <%= link_to('Logout', destroy_user_session_path, :method => :delete, :class => 'btn btn-secondary') %>
-        </p>
+        <small>
+          You are signed in as <%= current_user.email %>.
+          <%= link_to('Logout', destroy_user_session_path, :method => :delete ) %>
+        </small>
       <% else %>
-        <p>
+        <small>
           You are not logged in.
-          <%= link_to('Login', new_user_session_path, :class => 'btn btn-secondary')  %>
+          <%= link_to 'Login', new_user_session_path %>
           or
-          <%= link_to 'Register', new_user_registration_path, class: 'btn btn-secondary' %>
-        </p>
+          <%= link_to 'Register', new_user_registration_path %>
+        </small>
       <% end %>
 
-      <h1>ratemykitty.vn</h1>
-      <img src="<%= image_path('logo.png') %>" srcset="<%= image_path('logo@2x.png') %> 2x">
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+
+          <% if notice %>
+          <div class="alert alert-info">
+            <strong>Cool:</strong> <%= notice %>
+          </div>
+          <% end %>
+
+          <% if alert %>
+          <div class="alert alert-danger">
+            <strong>Whoa, no way:</strong> <%= alert %>
+          </div>
+          <% end %>
+
+          <h1>ratemykitty.vn</h1>
+          <img src="<%= image_path('logo.png') %>" srcset="<%= image_path('logo@2x.png') %> 2x">
+        </div>
+      </div>
     </div>
 
     <!-- Modal -->
@@ -43,10 +59,10 @@
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
-            <h5 class="modal-title" id="exampleModalLabel">Sign in to rate, edit, or kill kitties!</h5>
+            <h4 class="modal-title" id="exampleModalLabel">Sign in to rate, edit, <strong>or even kill</strong> kitties!</h4>
           </div>
           <div class="modal-body">
-            <p>You can create your own user, or demo this site as a guest by logging in to</p>
+            <p>You can create your own user, or demo this site as a guest by logging in as</p>
             <p>User: guest@ratemykitty.vn</p>
             <p>Password: supersecret</p>
           </div>

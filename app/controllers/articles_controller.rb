@@ -5,8 +5,7 @@ class ArticlesController < ApplicationController
 
   def require_permission
     if current_user != Article.find(params[:id]).user
-      redirect_to root_path
-      #Or do something else here
+      redirect_to articles_url, alert: 'Thats not your kitty. Try it with your own kitty...'
     end
   end
 

@@ -1,4 +1,4 @@
-# Pre-work - *Name of App Here*
+# Pre-work - *Rate My Kitty*
 
 ~~ ratemykitty.vn ~~ is a Ruby on Rails application.
 
@@ -29,14 +29,16 @@ The following **additional** features are implemented:
 
 - [x] use routes to make kitty index the root index of application
 - [x] kitties have image uploads (used 'paperclip' to for file attachment)
+- [x] app supports multiple users (used 'devise' gem)
 - [x] kitties have rating level
-- [ ] user can add +1 and substract -1 from rating
+- [x] user can add +1 and substract -1 from rating
 - [ ] leaderboard table for kitties
 - [x] graph of kitty views
-- [ ] graph of kitty rating
+- [x] graph of kitty rating
+= [x] nice looking alerts and warnings
 - [ ] graph hover points show kitty thumbnail
 - [ ] implement vue.js for two-way data binding and asynchronously rate kitties
-- [ ] rad styling
+- [x] rad styling and custom-illustrated logo
 
 ## Video Walkthrough
 
