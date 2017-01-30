@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  before_action :set_article, only: [:show, :edit, :update, :destroy]
+  before_action :set_article, only: [:show, :edit, :update, :destroy, :upvote]
 
   before_filter :require_permission, only: [:edit, :destroy]
 
@@ -72,6 +72,18 @@ class ArticlesController < ApplicationController
       format.html { redirect_to articles_url, notice: 'Article was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def vote
+    @article = Article.find(params[:id])
+    @article.vote_by :voter => current_user, :duplicate => true
+    redirect_to articles_url
+  end
+
+  def downvote
+    @article = Article.find(params[:id])
+    @article.downvote_by :voter => current_user, duplicate => true
+    redirect_to articles_url
   end
 
   private

@@ -6,7 +6,7 @@
 </p>
 
 <p>
-  <strong>Body:</strong>
+  <strong>About this kitty:</strong>
   <%= @markdown.render(@article.body).html_safe %>
 </p>
 <p>
@@ -15,10 +15,11 @@
 </p>
 
 <p>
-  <strong>User:</strong>
+  <strong>Submitted by:</strong>
   <%= @article.user.email %>
 </p>
 
+<%= link_to @article.get_upvotes.size, like_article_path(@article), method: :put, class: "btn btn-default" %>
 <%= link_to 'Edit', edit_article_path(@article), class: 'btn btn-primary' %>
 <%= link_to 'Kill', article_path, method: :delete, data: { confirm: 'Are you serious!?' }, class: 'btn btn-danger' %>
 <%= link_to 'Back', articles_path, class: 'btn btn-secondary' %>
