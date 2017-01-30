@@ -1,6 +1,7 @@
 body {
   background: #fff257;
   text-align: center;
+  padding: 20px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -8,7 +9,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 60px;
+  font-size: 60px; padding: 20px;
+  span { vertical-align: bottom; }
 }
 
 h3 {
