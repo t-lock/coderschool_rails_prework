@@ -6,10 +6,13 @@
 <div class="container">
 
   <br>
-  <h3>Kitty Stats</h3>
+
+  <!-- STATS CHART -->
+  <% unless params[:search] %>
 
   <div class="row">
     <div class="col-sm-12">
+      <h3>Kitty Stats</h3>
       <div class="chart">
 
         <% viewsHash = Hash[ @articles.map{ |kitty| [kitty.title,kitty.impressionist_count] } ] %>
@@ -26,6 +29,18 @@
 
   <br>
   <h3>Meet the Kitties &hellip;</h3>
+
+  <% else %>
+
+  <%= link_to 'Back to All', root_path, class: 'btn btn-primary' %>
+
+  <br>
+  <br>
+  <h3>Search results for <%= params[:search] %> &hellip;</h3>
+
+  <% end %>
+
+
 
   <div class="row">
     <div class="col-sm-12">
@@ -77,12 +92,22 @@
 
       <% end %>
 
+      <br>
+      <% if user_signed_in? %>
+        <%= link_to new_article_path, class: 'btn btn-primary' do %>
+          <i class="icon-plus"></i> New Kitty
+        <% end %>
+      <% end %>
+
+      <% if params[:search] %>
+        <%= link_to 'Back to All', root_path, class: 'btn btn-primary' %>
+      <% end %>
+
+      <br>
+      <br>
+
     </div>
   </div>
 
-  <br>
-  <% if user_signed_in? %>
-    <%= link_to 'Add A Kitty', new_article_path, class: 'btn btn-primary' %>
-  <% end %>
 
 </div>

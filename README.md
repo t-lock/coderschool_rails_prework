@@ -16,8 +16,8 @@ The following **required** functionality is complete:
 * [x] User can edit an existing kitty.
 * [x] There is one kitty that introduces the App Creator with name, picture.
 * [x] User can delete stories, with an alert that asks the user to confirm.
-* [ ] User see a search form on the kittys page.
-* [ ] User can submit a search term to find all kittys with titles containing the search term.
+* [x] User see a search form on the kittys page.
+* [x] User can submit a search term to find all kittys with titles containing the search term.
 
 The following **optional** features are implemented:
 * [ ] There is a "navbar" that is responsive to window size similar to http://v4-alpha.getbootstrap.com/examples/navbar/.
@@ -30,12 +30,11 @@ The following **additional** features are implemented:
 - [x] use routes to make kitty index the root index of application
 - [x] kitties have image uploads (used 'paperclip' to for file attachment)
 - [x] app supports multiple users (used 'devise' gem)
-- [x] kitties have rating level
-- [x] user can add +1 and substract -1 from rating
-- [ ] leaderboard table for kitties
+- [x] users can upvote and downvote kities
+- [x] kitties have rating level based on vote sum
 - [x] graph of kitty views
-- [x] graph of kitty rating
-= [x] nice looking alerts and warnings
+- [x] graph of kitty rating level
+= [x] nice looking alerts and warnings from basic user actions
 - [ ] graph hover points show kitty thumbnail
 - [ ] implement vue.js for two-way data binding and asynchronously rate kitties
 - [x] rad styling and custom-illustrated logo
