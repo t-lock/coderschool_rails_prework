@@ -1,25 +1,46 @@
-<p id="notice"><%= notice %></p>
-<%= image_tag @article.image.url(:large) %>
-<p>
-  <strong>Title:</strong>
-  <%= @article.title %>
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6">
+        <%= image_tag @article.image.url(:large), :class => '.img-fluid' %>
+      <p>
+        <strong>Title:</strong>
+        <%= @article.title %>
+      </p>
 
-<p>
-  <strong>About this kitty:</strong>
-  <%= @markdown.render(@article.body).html_safe %>
-</p>
-<p>
-  <strong>View Count:</strong>
-  <%= @article.impressionist_count %>
-</p>
+      <p>
+        <strong>About this kitty:</strong>
+        <%= @markdown.render(@article.body).html_safe %>
+      </p>
+      <p>
+        <strong>View Count:</strong>
+        <%= @article.impressionist_count %>
+      </p>
 
-<p>
-  <strong>Submitted by:</strong>
-  <%= @article.user.email %>
-</p>
+      <p>
+        <strong>Submitted by:</strong>
+        <%= @article.user.email %>
+      </p>
 
-<%= link_to @article.get_upvotes.size, like_article_path(@article), method: :put, class: "btn btn-default" %>
-<%= link_to 'Edit', edit_article_path(@article), class: 'btn btn-primary' %>
-<%= link_to 'Kill', article_path, method: :delete, data: { confirm: 'Are you serious!?' }, class: 'btn btn-danger' %>
-<%= link_to 'Back', articles_path, class: 'btn btn-secondary' %>
+      <%= link_to dislike_article_path(@article), method: :put, class: 'btn btn-outline-danger' do %>
+        <i class="icon-thumbs-down"></i> Hate
+      <% end %>
+      <%= link_to like_article_path(@article), method: :put, class: 'btn btn-outline-success' do %>
+        <i class="icon-thumbs-up"></i> Dig
+      <% end %>
+
+      <p style="padding-top: 15px;">- or -</p>
+
+      <%= link_to articles_path, class: 'btn btn-secondary' do %>
+        <i class="icon-arrow-left"></i> Back
+      <% end %>
+      <%= link_to edit_article_path(@article), class: 'btn btn-primary' do %>
+        <i class="icon-pencil"></i> Edit
+      <% end %>
+      <%= link_to article_path, method: :delete, data: { confirm: 'Are you serious!?' }, class: 'btn btn-danger' do %>
+        <i class="icon-sword"></i> Kill
+      <% end %>
+    </div>
+    <div class="col-sm-3"></div>
+  </div>
+</div>

@@ -30,6 +30,7 @@ The following **additional** features are implemented:
 - [x] use routes to make kitty index the root index of application
 - [x] kitties have image uploads (used 'paperclip' to for file attachment)
 - [x] app supports multiple users (used 'devise' gem)
+- [x] modal popup prompting a login if not logged in on kitty index
 - [x] users can upvote and downvote kities
 - [x] kitties have rating level based on vote sum
 - [x] graph of kitty views

@@ -56,14 +56,14 @@
         <div class="overlay">
           <div class="dislike text-white">
             <%= link_to dislike_article_path(kitty), method: :put, class: 'btn btn-outline-danger' do %>
-              -1
+              Hate
               <br>
               <i class="icon-thumbs-down"></i>
             <% end %>
           </div>
           <div class="like text-white">
             <%= link_to like_article_path(kitty), method: :put, class: 'btn btn-outline-success' do %>
-              +1
+              Dig
               <br>
               <i class="icon-thumbs-up"></i>
             <% end %>
@@ -93,16 +93,17 @@
       <% end %>
 
       <br>
+      <% if params[:search] %>
+        <%= link_to root_path, class: 'btn btn-primary' do %>
+          <i class="icon-arrow-left"></i> Back to All Kitties
+        <% end %>
+      <% end %>
+
       <% if user_signed_in? %>
         <%= link_to new_article_path, class: 'btn btn-primary' do %>
           <i class="icon-plus"></i> New Kitty
         <% end %>
       <% end %>
-
-      <% if params[:search] %>
-        <%= link_to 'Back to All', root_path, class: 'btn btn-primary' %>
-      <% end %>
-
       <br>
       <br>
 
