@@ -35,7 +35,7 @@ The following **additional** features are implemented:
 - [x] kitties have rating level based on vote sum
 - [x] graph of kitty views
 - [x] graph of kitty rating level
-= [x] nice looking alerts and warnings from basic user actions
+- [x] nice looking alerts and warnings from basic user actions
 - [ ] graph hover points show kitty thumbnail
 - [ ] implement vue.js for two-way data binding and asynchronously rate kitties
 - [x] rad styling and custom-illustrated logo
