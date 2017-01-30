@@ -38,7 +38,7 @@ The following **additional** features are implemented:
 - [x] nice looking alerts and warnings from basic user actions
 - [ ] graph hover points show kitty thumbnail
 - [ ] implement vue.js for two-way data binding and asynchronously rate kitties
-- [x] rad styling and custom-illustrated logo
+- [x] rad styling
 - [x] custom-illustrated logo
 
 ## Video Walkthrough
