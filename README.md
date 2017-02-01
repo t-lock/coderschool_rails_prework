@@ -67,7 +67,7 @@ Thanks for watching!!
 
 Here's a walkthrough of implemented user stories:
 
-![Video Walkthrough](walkthrough.gif)
+![Video Walkthrough](kitty_demo.gif)
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
