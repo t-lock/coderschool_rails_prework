@@ -8,7 +8,7 @@ Time spent: **X** hours spent in total
 
 URL: **Insert your Heroku URL here**
 
-## User Stories
+## User Kitties :)
 
 The following **required** functionality is complete:
 
@@ -27,13 +27,18 @@ The following **optional** features are implemented:
 
 The following **additional** features are implemented:
 
+FUN STUFF
+
 - [x] use routes to make kitty index the root index of application
 - [x] kitties have image uploads (used 'paperclip' to for file attachment)
+^^already saw this
 - [x] app supports multiple users (used 'devise' gem)
 - [x] modal popup prompting a login if not logged in on kitty index
-- [x] users can upvote and downvote kities
+- [x] users can upvote and downvote kitties
+^^already saw this
 - [x] kitties have rating level based on vote sum
 - [x] graph of kitty views
+^^ cool huh!?
 - [x] graph of kitty rating level
 - [x] nice looking alerts and warnings from basic user actions
 - [ ] graph hover points show kitty thumbnail
@@ -41,15 +46,28 @@ The following **additional** features are implemented:
 - [x] rad styling
 - [x] custom-illustrated logo
 
+^^ wow a custom logo, thats slick yo!
+
+
+Thanks for watching!!
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-> HINT: You can put a `walkthrough.gif` file in your project folder, add to git, and use the following syntax to embed it:
-> `![Video Walkthrough](walkthrough.gif)`
->
-
-![Video Walkthrough](/path/to/your/gif/file)
+![Video Walkthrough](walkthrough.gif)
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
