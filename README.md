@@ -8,6 +8,7 @@ Time spent: 20+ hours spent in total
 
 URL: https://ratemykitty-vn.herokuapp.com/
 
+
 ## App Functions
 
 The following **required** functionality is complete:
@@ -27,8 +28,6 @@ The following **optional** features are implemented:
 
 The following **additional** features are implemented:
 
-FUN STUFF
-
 - [x] use routes to make kitty index the root index of application
 - [x] kitties have image uploads (used 'paperclip' to for file attachment)
 - [x] app supports multiple users (used 'devise' gem)
@@ -44,7 +43,6 @@ FUN STUFF
 - [x] custom-illustrated logo
 
 
-
 ## Video Walkthrough
 
 Here's a walkthrough of the app:
@@ -53,6 +51,7 @@ Here's a walkthrough of the app:
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
+
 ## Notes
 
 Describe any challenges encountered while building the app.
@@ -60,6 +59,7 @@ Describe any challenges encountered while building the app.
 - I had a hard time setting up the environment, due to SSL errors.
 - Struggled trying to build the voting system from scratch, ended up using a gem called acts_as_votable instead.
 - Had some issues with errors throughout, and general newbie stuff...
+
 
 ## License
 
