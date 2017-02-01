@@ -1,4 +1,4 @@
 Chartkick.options = {
-  colors: ["pink", "orange"],
+  colors: ["#008A4A", "#FF88FF"],
   lineTension: 100,
 }
