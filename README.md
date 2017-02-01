@@ -6,7 +6,7 @@ Submitted by: Timothy Wheelock
 
 Time spent: 20+ hours spent in total
 
-URL: **Insert your Heroku URL here**
+URL: https://ratemykitty-vn.herokuapp.com/
 
 ## App Functions
 
