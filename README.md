@@ -4,11 +4,11 @@
 
 Submitted by: Timothy Wheelock
 
-Time spent: **X** hours spent in total
+Time spent: 20+ hours spent in total
 
 URL: **Insert your Heroku URL here**
 
-## User Kitties :)
+## App Functions
 
 The following **required** functionality is complete:
 
@@ -31,14 +31,11 @@ FUN STUFF
 
 - [x] use routes to make kitty index the root index of application
 - [x] kitties have image uploads (used 'paperclip' to for file attachment)
-^^already saw this
 - [x] app supports multiple users (used 'devise' gem)
 - [x] modal popup prompting a login if not logged in on kitty index
 - [x] users can upvote and downvote kitties
-^^already saw this
 - [x] kitties have rating level based on vote sum
 - [x] graph of kitty views
-^^ cool huh!?
 - [x] graph of kitty rating level
 - [x] nice looking alerts and warnings from basic user actions
 - [ ] graph hover points show kitty thumbnail
@@ -46,26 +43,11 @@ FUN STUFF
 - [x] rad styling
 - [x] custom-illustrated logo
 
-^^ wow a custom logo, thats slick yo!
-
-
-Thanks for watching!!
-
-
-
-
-
-
-
-
-
-
-
 
 
 ## Video Walkthrough
 
-Here's a walkthrough of implemented user stories:
+Here's a walkthrough of the app:
 
 ![Video Walkthrough](kitty_demo.gif)
 
@@ -75,7 +57,9 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 Describe any challenges encountered while building the app.
 
-I had a hard time setting up the environment, due to SSL errors.
+- I had a hard time setting up the environment, due to SSL errors.
+- Struggled trying to build the voting system from scratch, ended up using a gem called acts_as_votable instead.
+- Had some issues with errors throughout, and general newbie stuff...
 
 ## License
 
